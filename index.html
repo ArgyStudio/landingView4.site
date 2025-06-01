@@ -199,14 +199,14 @@ window.addEventListener('load', async () => {
     {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ subdomain: 'clubm', fbc, fbp })
+      body: JSON.stringify({ subdomain: 'lauticas', fbc, fbp })
     }
   );
   if (!resp.ok) throw new Error(`LineManager error: ${resp.status}`);
   const { whatsapp_number: number, uuid } = await resp.json();
 
   // → Enviar EventPayload a tu segundo API Gateway
-  const SECONDARY_API = 'https://wa9949qkz5.execute-api.us-east-2.amazonaws.com/PROD/F1-LORE';
+  const SECONDARY_API = 'https://f8iqnsrw38.execute-api.us-east-2.amazonaws.com/prod/F1-LAUTICAS';
   const EventPayload = {
     uuid,
     name,
